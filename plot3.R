@@ -21,13 +21,12 @@ rownames(data)<-seq(nrow(data))
 data$Date<-as.POSIXct(paste(data$Date,data$Time),
                       format="%d/%m/%Y %H:%M:%S")
 data <- data[,-2]
-png(file="plot3.png",width=480,height=480,units="px")
-
+png(file="plot3.png",width=480,height=480,units="px",bg="transparent")
 #Publish plot3.png
 with(data,plot(Date, Sub_metering_1, 
                               type="n", 
                               ylab="Energy sub metering",
-                              main=NULL))
+                              xlab=""))
 with(data,lines(Date, Sub_metering_1))
 with(data,lines(Date, Sub_metering_2,col="red"))
 with(data,lines(Date, Sub_metering_3,col="blue"))

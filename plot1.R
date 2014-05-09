@@ -21,8 +21,7 @@ rownames(data)<-seq(nrow(data))
 data$Date<-as.POSIXct(paste(data$Date,data$Time),
                       format="%d/%m/%Y %H:%M:%S")
 data <- data[,-2]
-png(file="plot1.png",width=480,height=480,units="px")
-
+png(file="plot1.png",width=480,height=480,units="px",bg="transparent")
 #Publish plot1.png
 with(data,hist(Global_active_power,
                main="Global Active Power",

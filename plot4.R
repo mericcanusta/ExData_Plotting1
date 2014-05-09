@@ -21,7 +21,7 @@ rownames(data)<-seq(nrow(data))
 data$Date<-as.POSIXct(paste(data$Date,data$Time),
                       format="%d/%m/%Y %H:%M:%S")
 data <- data[,-2]
-png(file="plot4.png",width=480,height=480,units="px")
+png(file="plot4.png",width=480,height=480,units="px",bg="transparent")
 #Publish plot4.png
 par(mfrow=c(2,2),mar=c(4,4,2,1))
 #Topleft plot-Time series of global active power

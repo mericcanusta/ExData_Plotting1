@@ -21,13 +21,12 @@ rownames(data)<-seq(nrow(data))
 data$Date<-as.POSIXct(paste(data$Date,data$Time),
                       format="%d/%m/%Y %H:%M:%S")
 data <- data[,-2]
-png(file="plot2.png",width=480,height=480,units="px")
-
+png(file="plot2.png",width=480,height=480,units="px",bg="transparent")
 #Publish plot2.png
 with(data,plot(Date, Global_active_power, 
                type="n", 
                ylab="Global Active Power (kilowatts)",
-               main=NULL))
+               xlab=""))
 with(data,lines(Date, Global_active_power))
 dev.off()
 rm(filename,archivename)
